@@ -1,6 +1,5 @@
 # video_converter
 This package has a image conversion server that will let user to change modes and thereby the format of image.
-
 # 1. Introduction:
 
 - This document gives a detailed overview of how to build and execute this package to convert the video frame to a desired format.
@@ -42,6 +41,12 @@ source ~/.bashrc
 ```
 ros2 launch image_conv_pkg image_conversion.launch.py image_server_input_topic:=cam/image_raw image_server_output_topic:=cam/converted
 # Change the topics as desired
+```
+
+1. Call the ros2 service via terminal.
+
+```
+ros2 service call /set_image_mode std_srvs/srv/SetBool "{data: 1}"
 ```
 
 1. User interface to change the modes run the following node:
